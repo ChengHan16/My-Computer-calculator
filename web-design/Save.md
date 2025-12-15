@@ -1385,8 +1385,7 @@ Code：<br>
 </html>
 ```
 ## 增加可更新圖片
-![Uploading image.png…]()
-
+<img width="2521" height="1296" alt="image" src="https://github.com/user-attachments/assets/2df25cea-7124-4daa-8bd0-d222a5904b59" />
 
 ```html
 <!DOCTYPE html>
