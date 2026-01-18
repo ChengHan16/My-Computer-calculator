@@ -1,0 +1,104 @@
+<img width="570" height="570" alt="image" src="https://github.com/user-attachments/assets/cfbce800-ccbc-41ea-aead-9c271b9125d9" />
+
+### ● 程式碼：
+```html
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <title>立法院傳票 - 安德烈案</title>
+    <style>
+        body {
+            font-family: "STKaiti", "KaiTi", "標楷體", serif;
+            background-color: #f4f4f4;
+            display: flex;
+            justify-content: center;
+            padding: 40px;
+        }
+        .document {
+            background-color: white;
+            width: 210mm;
+            min-height: 297mm;
+            padding: 20mm;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+            position: relative;
+            border: 2px solid #000;
+        }
+        .watermark {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%) rotate(-30deg);
+            font-size: 80px;
+            color: rgba(200, 200, 200, 0.2);
+            white-space: nowrap;
+            pointer-events: none;
+            z-index: 0;
+        }
+        header {
+            text-align: center;
+            border-bottom: 2px solid #000;
+            margin-bottom: 20px;
+            padding-bottom: 10px;
+        }
+        h1 { margin: 0; font-size: 32px; letter-spacing: 5px; }
+        h2 { margin: 5px 0; font-size: 24px; }
+        .info-section { margin: 20px 0; line-height: 1.8; z-index: 1; position: relative; }
+        .label { font-weight: bold; width: 100px; display: inline-block; }
+        table { width: 100%; border-collapse: collapse; margin-top: 20px; }
+        td { vertical-align: top; padding: 5px 0; }
+        .footer { margin-top: 50px; text-align: right; }
+        .stamp {
+            display: inline-block;
+            border: 3px solid #ff0000;
+            color: #ff0000;
+            padding: 5px 10px;
+            font-weight: bold;
+            transform: rotate(-5deg);
+            margin-top: 10px;
+        }
+        .date { text-align: center; margin-top: 100px; font-size: 20px; letter-spacing: 3px; }
+    </style>
+</head>
+<body>
+    <div class="document">
+        <div class="watermark">立法院 Legislature</div>
+        
+        <header>
+            <h1>立 法 院 Legislature</h1>
+            <h2>刑事／民事 案件傳票</h2>
+        </header>
+
+        <div class="info-section">
+            <p><strong>案號：</strong> 114 年度 誠信背叛 字第 087 號</p>
+            <p><strong>案由：</strong> 違反友誼誠信原則、消極履行遊戲義務及不實陳述案</p>
+            <hr>
+            <table>
+                <tr><td class="label">被　　告：</td><td>安德烈</td></tr>
+                <tr><td class="label">原　　告：</td><td>肖宇、阿韋、偉哥、小檸檬、神之手</td></tr>
+                <tr><td class="label">應到時間：</td><td>2025 年 ____ 月 ____ 日 ____ 時 ____ 分</td></tr>
+                <tr><td class="label">應到處所：</td><td>立法院Discord / 法庭</td></tr>
+            </table>
+            <hr>
+            <h3>事實與理由：</h3>
+            <ol>
+                <li><strong>違反誠信原則：</strong> 被告於特定女性友人參與期間，涉嫌對原告等發表背叛性言論，嚴重損害團體向心力。</li>
+                <li><strong>消極參與義務：</strong> 被告長期縮減共同遊戲時數，且對於社群參與缺乏主動性，僅於質詢後始被動回應。</li>
+                <li><strong>不實陳述：</strong> 被告涉嫌隱瞞與女性友人遊玩之事實，意圖規避兄弟同盟義務，情節重大。</li>
+            </ol>
+            <p><strong>備註：</strong> 未依限履行補償者，須支付總金額之 99% 罰鍰。若產生心虛或身體不適，本單位概不負責。</p>
+        </div>
+
+        <div class="footer">
+            <p>承辦單位：立法院友誼法庭第一庭</p>
+            <div class="stamp"> 立法院 Legislature <br>專用印章</div>
+        </div>
+
+        <div class="date">
+            中 華 民 國 114 年  12  月  19  日
+        </div>
+    </div>
+</body>
+</html>
+```
+
