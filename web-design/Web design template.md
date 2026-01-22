@@ -1,4 +1,5 @@
 ● 示意圖：
+
 <img width="2550" height="1373" alt="image" src="https://github.com/user-attachments/assets/ad365d72-e590-4139-a72b-c5565db300ea" />
 
 ● 程式碼：
