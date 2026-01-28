@@ -27,6 +27,10 @@
 }
 ```
 ```html
+    <main class="event-content-area" style="position: relative;">
+        <div class="profile-header" style="position: relative;">
+```
+```html
 <div class="profile-header" style="position: relative;">
     <div class="photo-section">
         <img src="https://github.com/ChengHan16/Legislature-Family-Website/blob/main/image/Ding_Junqi.png?raw=true" alt="丁俊齊照片" class="avatar-img">
