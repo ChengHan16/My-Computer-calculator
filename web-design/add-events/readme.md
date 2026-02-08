@@ -1108,7 +1108,7 @@
 </body>
 </html>
 ```
-## OK
+## OK 功能無問題(可上傳圖片，有上傳中遮罩)
 ```html
 <!DOCTYPE html>
 <html lang="zh-TW">
