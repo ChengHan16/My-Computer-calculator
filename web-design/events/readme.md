@@ -98,3 +98,40 @@ service cloud.firestore {
 }
 
 ```
+```
+rules_version = '2';
+service cloud.firestore {
+  match /databases/{database}/documents {
+    
+    // 1. 成員資料管理 (重要：開放讀取以便程式碼進行排序抓取)
+    match /content/{docId} {
+      allow read: if true; 
+      allow write: if request.auth != null;
+    }
+
+    // 2. 活動主文件：管理員可增刪，登入成員可更新 (用於 arrayUnion 投票)
+    match /events/{eventId} {
+      allow read: if true;
+      allow create, delete: if request.auth != null && request.auth.token.email == "wu@ll.com";
+      allow update: if request.auth != null;
+
+      // 投票子集合：僅限本人操作
+      match /votes/{userId} {
+        allow read: if true;
+        allow write: if request.auth != null && request.auth.uid == userId;
+      }
+    }
+
+    // 3. 個人資料備援 (act 集合)
+    match /act/{userId} {
+      allow read: if true;
+      allow write: if request.auth != null && request.auth.uid == userId;
+    }
+
+    // 4. 其他功能性集合 (聊天、檔案等)
+    match /chats/{document=**} { allow read, write: if request.auth != null; }
+    match /post/{document=**} { allow read: if true; allow write: if request.auth != null; }
+    match /file/{document=**} { allow read, write: if request.auth != null; }
+  }
+}
+```
