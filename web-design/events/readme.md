@@ -1,4 +1,4 @@
-```db
+```js
 rules_version = '2';
 service cloud.firestore {
   match /databases/{database}/documents {
@@ -72,15 +72,17 @@ service cloud.firestore {
     //20260209
     // 1. 活動資料：所有人皆可讀取，僅授權管理員可寫入
     match /events/{eventId} {
-      allow read: if true; 
-      allow write: if request.auth != null && request.auth.token.email == "wu@ll.com";
-      
-      // 2. 投票子集合：所有人可讀，登入者可寫入自己的投票
-      match /votes/{userId} {
-        allow read: if true;
-        allow write: if request.auth != null && request.auth.uid == userId;
-      }
-    }
+  allow read: if true; 
+  // 僅限管理員新增/刪除
+  allow create, delete: if request.auth != null && request.auth.token.email == "wu@ll.com";
+  // 關鍵：允許所有登入成員 update，以便執行 arrayUnion/arrayRemove (投票即同步)
+  allow update: if request.auth != null; 
+
+  match /votes/{userId} {
+    allow read: if true;
+    allow write: if request.auth != null && request.auth.uid == userId;
+  }
+}
 
     // 3. 成員資料 (act/content)：所有人可讀，確保頭像與名稱正常顯示
     match /act/{userId} {
@@ -94,4 +96,5 @@ service cloud.firestore {
     }
   }
 }
+
 ```
